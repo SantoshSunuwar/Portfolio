@@ -16,7 +16,10 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">Santosh Sunuwar</div>
-    <ul class="nav-links">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#hero">Home</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -26,16 +29,15 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
+<section class="hero" id="hero">
+  <div class="hero-container">
+    
+    <!-- LEFT SIDE: Hero Text Content -->
+    <div class="hero-text">
       <p class="subtitle">CyberSecurity Enthusiast</p>
       <h1>SANTOSH SUNUWAR</h1>
       <p class="description">
         CyberSecurity Researcher and Enthusiast with a passion for exploring the world of cybersecurity and staying up-to-date with the latest trends and technologies. I am dedicated to enhancing my skills and knowledge in the field of cybersecurity. Extremely committed to contributing to the cybersecurity community and making a positive impact in the digital world.
-      </p>
-
-      <p class="profile-picture">
-        <img src="assets/images/SANTOSH SUNUWAR PP.JPG" alt="My Profile Picture" class="profile-img"/>  
       </p>
 
       <div class="hero-buttons">
@@ -44,18 +46,31 @@
       </div>
 
       <div class="social-links">
-  <a href="https://github.com/SantoshSunuwar/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-    <i class="fa-brands fa-github"></i>
-  </a>
-  <a href="https://linkedin.com/in/SantoshSunuwar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-    <i class="fa-brands fa-linkedin"></i>
-  </a>
-  <a href="https://facebook.com/S.Santos.R" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-    <i class="fa-brands fa-facebook"></i>
-  </a>
-       </div>
+        <a href="https://github.com/SantoshSunuwar/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/SantoshSunuwar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://facebook.com/S.Santos.R" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://x.com/Call_me_SAS" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/Shawn4Fun/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
     </div>
-  </section>
+
+    <!-- RIGHT SIDE: Profile Image -->
+    <div class="hero-image-wrapper">
+      <img src="assets/images/SANTOSH SUNUWAR PP.JPG" alt="Santosh Sunuwar Profile Picture" class="profile-img"/> 
+    </div>
+
+  </div>
+</section>
 
   <!-- EDUCATION -->
   <section class="education-section" id="education">
@@ -138,14 +153,13 @@
     <h2>Experiences</h2>
 
     <div class="experiences-grid">
-
       <div class="experience-card">
         <h3>ZTE Smartphone Sales</h3>
         <p>Sold ZTE smartphones and provided customer support in a retail environment.</p>
       </div>
 
       <div class="experience-card">
-        <h3>Senior Technical Support </h3>
+        <h3>Senior Technical Support</h3>
         <p>Provided advanced technical support and troubleshooting for complex hardware and software issues.</p>
       </div>
 
@@ -163,6 +177,7 @@
         <h3>Network Security</h3>
         <p>Implementing and managing firewalls, VPNs, and intrusion detection systems.</p>
       </div>  
+
       <div class="experience-card">
         <h3>AI Summit Nepal 2026 Organizer</h3>
         <p>Organizing member and assisted the AI Summit Nepal 2026 event, handling marketing and logistics. Coordinating with speakers and attendees.</p>
@@ -174,12 +189,13 @@
   <section class="contact" id="contact">
     <h2>Contact</h2>
 
-    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="8b244ec5-1110-40f9-9377-38e728366766">
+    <form class="contact-form" id="contact-form">
+      <input type="hidden" name="access_key" value="e82e5491-29fa-4703-93a2-9ea35d526654">
       <input type="text" name="name" placeholder="Your Name" required/>
       <input type="email" name="email" placeholder="Email Address" required/>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" id="submit-btn">Send Message</button>
+      <p id="form-status"></p>
     </form>
   </section>
 
