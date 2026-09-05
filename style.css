@@ -36,6 +36,13 @@ html {
   font-size: 24px;
   font-weight: 700;
   color: #00ff9d;
+  text-decoration: none; /* Removes default link underline */
+  transition: opacity 0.3s ease; /* Optional: smooth hover transition */
+}
+
+/* Optional hover effect */
+.logo:hover {
+  opacity: 0.7;
 }
 
 .nav-links {
@@ -135,8 +142,7 @@ html {
 .hero-image-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: -100px;
+  align-items: center;;
 }
 
 .profile-img {
@@ -145,11 +151,12 @@ html {
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #00ff9d;
+
 }
 
 .social-links {
   display: flex;
-  gap: 25px; /* Spacing between icons */
+  gap: 25px; 
   align-items: center;
   margin-top: 40px;
   flex-wrap: wrap;
@@ -157,7 +164,7 @@ html {
 
 .social-links a {
   color: #eaf2ec;
-  font-size: 32px; /* Icon size */
+  font-size: 32px; 
   text-decoration: none;
   transition: color 0.3s ease, transform 0.2s ease;
 }
@@ -173,7 +180,7 @@ html {
 
 .hero-container {
   display: flex;
-  flex-direction: row; /* Horizontal alignment for desktop */
+  flex-direction: row; 
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -181,7 +188,7 @@ html {
 }
 
 .hero-text {
-  flex: 1 1 60%; /* Takes up left side proportionally */
+  flex: 1 1 60%; 
   max-width: 650px;
 }
 
@@ -204,7 +211,7 @@ html {
 /* RESPONSIVE FALLBACK: Stack vertically on screens <= 992px */
 @media (max-width: 992px) {
   .hero-container {
-    flex-direction: column-reverse; /* Places image on top when collapsed on mobile */
+    flex-direction: column-reverse; 
     text-align: center;
   }
 
@@ -220,7 +227,7 @@ html {
 /* Hover effects */
 .social-links a:hover {
   color: #00ff9d; 
-  transform: translateY(-3px); /* Lift icon slightly */
+  transform: translateY(-3px); 
 }
 
 
@@ -279,39 +286,106 @@ h2 {
 }
 
 /* SKILLS SECTION */
+/* Color Palette & Base Typography */
+:root {
+  --bg-dark:transparent; ;
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-cyan: #00ff9d;
+  --accent-cyan-glow: rgba(6, 182, 212, 0.15);
+  --border-color: #334155;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+}
+
 .skills-section {
-  max-width: 900px;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  padding: 5rem 1.5rem;
 }
 
-.skill {
-  margin-bottom: 20px;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.skill-top {
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.accent-text {
+  color: var(--accent-cyan);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Modern Card Styling */
+.skills-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 8px 24px var(--accent-cyan-glow);
+}
+
+.card-header {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.card-icon {
+  color: var(--accent-cyan);
+}
+
+.card-header h3 {
+  font-size: 1.15rem;
   font-weight: 600;
+  margin: 0;
 }
 
-.skill-bar {
-  background: #1e293b;
-  height: 12px;
-  border-radius: 20px;
-  overflow: hidden;
+/* Tag Pills */
+.tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
-.skill-progress {
-  background: #00ff9d;
-  height: 100%;
-  border-radius: 20px;
-  margin: 0; /* Cleared unwanted top/bottom margins */
+.skill-tag {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-.skill-description {
-  margin-top: 6px;
-  color: #a0aec0;
-  font-size: 13px;
+.skill-tag small {
+  color: var(--accent-cyan);
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 /* EXPERIENCES SECTION */
@@ -320,6 +394,7 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
+
 
 .experience-card {
   background: #121826;
@@ -342,6 +417,26 @@ h2 {
   transform: translateY(-4px);
   border-color: #00ff9d;
 }
+/* Primary Button (Download CV) Hover Effect */
+.btn-primary:hover {
+  background: #00cc7d; /* Slightly darker green */
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.4); /* Neon green glow */
+  transform: translateY(-2px); /* Subtle lift */
+}
+
+/* Secondary Button (Contact Me) Hover Effect */
+.btn-secondary:hover {
+  background: rgba(0, 255, 157, 0.1); /* Subtle green fill */
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.2); /* Soft green glow */
+  transform: translateY(-2px); /* Subtle lift */
+}
+
+/* Optional: Smooth Active (Click) Effect */
+.btn-primary:active,
+.btn-secondary:active {
+  transform: translateY(0); /* Returns to original position when clicked */
+}
+
 
 /* CONTACT SECTION */
 .contact-form {
